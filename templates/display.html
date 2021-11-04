@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+	<h2>ALL DATA</h2>
+	<table border="1" style="border-collapse: collapse">
+		<tr>
+			<td><b>ID</b></td>
+			<td><b>MENU</b></td>
+		</tr>
+		{% for menu in menu %}
+		<tr>
+			<td>{{ menu.menu_id }}</td>
+			<td>{{ menu.menu_name }}</td>
+		</tr>
+		{% endfor %}
+		{% if pages.has_other_pages %}
+			<nav aria-label="Page navigation example">
+				<ul class="pagination">
+					{% if pages.has_previous %}
+						<li><a class="page-link text-primary d-inline-block" href="?page= {{ pages.previous_page_number }} "><<</a></li>
+					{% else %}
+						<li class="disabled"><div class="page-link text-secondary d-inline-block disabled" href="#"><<</div></li>
+					{% endif %}
+					
+					{% if pages.has_previous %}
+						{% if pages.previous_page_number != 1 %}
+							<li><a class="page-link text-primary d-inline-block" href="?page=1">1</a></li>
+							<li>...</li>
+						{% endif %}
+						<li><a class="page-link text-primary d-inline-block" href="?page= {{ pages.previous_page_number }}">{{ pages.previous_page_number }}</a></li>
+					{% endif %}
+					<li class="disabled">
+						<div class="page-link text-secondary d-inline-block disabled" href="#">{{ pages.number }}</div>
+					</li>
+					
+					{% if pages.has_next %}
+						<li><a class="page-link text-primary d-inline-block" href="?page= {{ pages.next_page_number }}">{{ pages.next_page_number }}</a></li>
+						{% if pages.next_page_number != pages.paginator.num_pages %}
+							<li>...</li>
+							<li><a class="page-link text-primary d-inline-block" href="?page= {{ pages.paginator.num_pages }}">{{ pages.paginator.num_pages }}</a></li>
+						{% endif %}
+					{% endif %}
+					
+					{% if pages.has_next %}
+						<li><a class="page-link text-primary d-inline-block" href="?page= {{ pages.next_page_number }}">>></a></li>
+					{% else %}
+						<li class="disabled"><div class="page-link text-secondary d-inline-block disabled" href="#">>></div>
+						</li>
+					{% endif %}
+				</ul>
+			</nav>
+		{% endif %}
+	</table>
+{% endblock main_content %}
+
+

@@ -1,0 +1,43 @@
+{% load static %}
+
+<!doctype HTML>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>MENU</title>
+		
+		<link rel="stylesheet" href="{% static 'recipe_site/css/common.css' %}">
+		<link rel="stylesheet" href="{% static 'recipe_site/css/menu.css' %}">
+		<link rel="stylesheet" href="{% static 'recipe_site/css/display.css' %}">
+		<link rel="stylesheet" href="{% static 'recipe_site/css/search.css' %}">
+		<link rel="stylesheet" href="{% static 'recipe_site/css/record.css' %}">
+		<link rel="stylesheet" href="{% static 'recipe_site/css/register.css' %}">		
+		<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+	</head>
+	
+	<body>
+		<div class="loginUser">
+			<p>WELCOME, {{ user.username }}</p>
+			<a href="{% url 'logout' %} ">LOGOUT</a>
+		</div>
+
+		<nav>
+			<ul style="list-style:none">
+				<header>
+					<h3>MENU</h3>
+				</header>
+				<li><a href="/display">DISPLAY</a></li>
+				<li><a href="/search">SEARCH</a></li>
+				<li><a href="/register">REGISTER</a></li>
+				<li><a href="/record">RECORD</a></li>
+				<br>
+			</ul>
+		</nav>
+		<div class="main">		
+		{% block main_content %}
+		{% endblock main_content %}
+		</div>
+	</body>
+
+</html>
+

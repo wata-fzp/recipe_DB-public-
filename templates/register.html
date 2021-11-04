@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+
+
+{% block main_content %}
+	<h2>REGISTER</h2>
+	
+	{% if messages %}
+	<ul class="message">
+		{% for message in messages %}
+		<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}
+		</li>
+		{% endfor %}
+	</ul>
+	{% endif %}
+	
+	<form method="POST">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" value="REGISTER">
+	</form>
+	
+	<!-- 
+	<form method="POST" class="post-form">
+		{% csrf_token %}
+		<input type="number" name="menu_id" maxlength="10"></br>
+		<input type="text" name="menu_name" maxlength="20"></br>
+		<!-- MAIN_CATEGORY ---------------------- --
+		<select name="menu_category1" required>
+			<option value="">SELECT</option>
+			<option value="1.肉"></option>
+			<option value="2.魚"></option>
+			<option value="3.野菜"></option>
+			<option value="4.汁物"></option>
+			<option value="5.ごはん"></option>
+			<option value="6.麺"></option>
+			<option value="7.パン"></option>
+			<option value="8.お菓子"></option>
+			<option value="9.調味料"></option>
+			<option value="0.その他"></option>
+		</select>
+		<!-- SUB_CATEGORY ---------------------- --
+		<select name="menu_category2" id="1.肉">
+			<option value="1.牛"></option>
+			<option value="2.鶏"></option>
+			<option value="3.豚"></option>
+			<option value="0.その他"></option>
+		</select>
+		<select name="menu_category2" id="2.魚">
+			<option value="1.白身"></option>
+			<option value="2.赤身"></option>
+			<option value="3.中間"></option>
+			<option value="4.青魚"></option>
+			<option value="5.魚卵"></option>
+			<option value="6.貝"></option>
+			<option value="0.その他"></option>
+		</select>
+		<select name="menu_category2" id="3.野菜">
+			<option value="1.葉"></option>
+			<option value="2.根"></option>
+			<option value="3.茎"></option>
+			<option value="4.実"></option>
+			<option value="5.きのこ"></option>
+			<option value="6.豆"></option>
+			<option value="7.海藻"></option>
+			<option value="0.その他"></option>
+		</select>
+		<select name="menu_category2" id="4.汁物">
+			<option value="1.スープ"></option>
+			<option value="2.シチュー"></option>
+			<option value="3.鍋"></option>
+			<option value="0.その他"></option>
+		</select>
+		<select name="menu_category2" id="5.ごはん">
+			<option value="1.丼"></option>
+			<option value="2.おにぎり"></option>
+			<option value="3.リゾット"></option>
+			<option value="0.その他"></option>
+		</select>
+		<select name="menu_category2" id="6.麺">
+			<option value="1.パスタ"></option>
+			<option value="2.うどん"></option>
+			<option value="3.そば"></option>
+			<option value="4.ラーメン"></option>
+			<option value="0.その他"></option>
+		</select>
+		<select name="menu_category2" id="7.パン">
+			<option value="1.食事パン"></option>
+			<option value="2.菓子パン"></option>
+			<option value="3.総菜パン"></option>
+			<option value="0.その他"></option>
+		</select>
+		<select name="menu_category2" id="8.お菓子">
+			<option value="1.焼き菓子"></option>
+			<option value="2.生菓子"></option>
+			<option value="3.季節のお菓子"></option>
+			<option value="0.その他"></option>
+		</select>
+		<select name="menu_category2" id="9.調味料">
+			<option value="-"></option>
+		</select>
+		<select name="menu_category2" id="0.その他">
+			<option value="-"></option>
+		</select>
+		<!-- INGREDIENT -------------------------------- --
+		<input type="text" name="ingredient1" maxlength="20" minlength="0"></br>
+		<input type="text" name="ingredient2" maxlength="20" minlength="0"></br>
+		<input type="text" name="ingredient3" maxlength="20" minlength="0"></br>
+		<input type="text" name="ingredient4" maxlength="20" minlength="0"></br>
+		<input type="text" name="ingredient5" maxlength="20" minlength="0"></br>
+		<input type="text" name="ingredient6" maxlength="20" minlength="0"></br>
+		<input type="text" name="ingredient7" maxlength="20" minlength="0"></br>
+		<input type="text" name="ingredient8" maxlength="20" minlength="0"></br>
+		<input type="text" name="ingredient9" maxlength="20" minlength="0"></br>
+		<input type="text" name="ingredient10" maxlength="20" minlength="0"></br>
+		<input type="text" name="ingredient11" maxlength="20" minlength="0"></br>
+		<input type="text" name="ingredient12" maxlength="20" minlength="0"></br>
+		<input type="text" name="ingredient13" maxlength="20" minlength="0"></br>
+		<input type="text" name="ingredient14" maxlength="20" minlength="0"></br>
+		<input type="text" name="ingredient15" maxlength="20" minlength="0"></br>
+		<input type="text" name="ingredient16" maxlength="20" minlength="0"></br>
+		<input type="text" name="ingredient17" maxlength="20" minlength="0"></br>
+		<input type="text" name="ingredient18" maxlength="20" minlength="0"></br>
+		<input type="text" name="ingredient19" maxlength="20" minlength="0"></br>
+		<input type="text" name="ingredient20" maxlength="20" minlength="0"></br>
+		<input type="text" name="recipe" maxlength="500" minlength="0"></br>
+		<input type="text" name="source" maxlength="20" minlength="0"></br>
+		<input type="date" name="register_date"></br>
+		
+		<button type="submit">REGISTER</button>
+	</form>
+	-->
+{% endblock main_content %}

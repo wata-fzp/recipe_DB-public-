@@ -1,0 +1,42 @@
+{% load static %}
+
+<!doctype HTML>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>LOGIN</title>
+	</head>
+	<link rel="stylesheet" href="{% static 'recipe_site/css/login.css' %}">
+	
+	<body>		
+		<div id="form">
+			<h2>LOGIN</h2>
+			
+			{% if form.errors %}
+			<p>wrong Username or Password!</p>
+			{% endif %}
+			<form method="POST" action="{% url 'menu' %}">
+				{% csrf_token %}
+				<table class="loginField">
+					<tr>
+						<td><label>Username</label>
+							{{ form.username }}</td>
+						{{ form.username.errors }}
+					</tr>
+					<tr>
+						<td><label>Password</label>
+							{{ form.password }}</td>
+						{{ form.password.errors }}
+					</tr>
+				</table>
+
+				<button type="submit">LOGIN</button>
+					
+			</form>
+		</div>
+		
+		<!-- <a href="/menu/">MENU</a> -->
+	</body>
+
+</html>
+

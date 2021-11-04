@@ -1,0 +1,29 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+:root{
+	font-family:"Arial","Hiragino Sans","Meiryo";
+	font-size: 17px;
+}
+
+header p {
+	margin: 0;
+	font-size: 30px;
+	line-height: 50px;
+}
+
+nav {
+	float: left;
+	text-align: center;
+	line-height: 3em;
+	margin-left: 10px;
+	background-color: lightgray;
+}
+.loginUser {
+	width: ***;
+	float: right;
+	margin-right: auto;
+}

@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+	<h2>search</h2>
+	
+	<div class="col-lg-6 offset-lg-3">
+	
+		<p>KEYWORDS</p>
+		<form method="POST">
+			{% csrf_token %}
+			{% for field in test_form %}
+				<div class="form-group form-inline">
+					<label class="col-md-ofset-2 col-md-3 control-label">
+						{{ field.label }}:
+					</label>
+					<div class="col-md-8">{{ field }}</div>
+				</div>
+			{% endfor %}
+			<input class="btn btn-success offset-md-8 col-md-3" type="submit" id="button" name="button" value="SEARCH">
+		</form>
+		
+		<p>RESULT</p>
+		<section class="post-list">
+			{% if obect_list|length == 0 %}
+				<p>no data</p>
+			{% else %}
+				<table class="table table-hover table-bordered">
+					<tr>
+						<th>ID</th>
+						<th>MENU TITLE</th>
+						<th>CATEGORY</th>
+						<th>SUB CATEGORY</th>
+						<th>INGREDIENT</th>
+						<th>INGREDIENT</th>
+						<th>INGREDIENT</th>
+						<th>INGREDIENT</th>
+						<th>INGREDIENT</th>
+						<th>INGREDIENT</th>
+						<th>INGREDIENT</th>
+						<th>INGREDIENT</th>
+						<th>INGREDIENT</th>
+						<th>INGREDIENT</th>
+						<th>INGREDIENT</th>
+						<th>INGREDIENT</th>
+						<th>INGREDIENT</th>
+						<th>INGREDIENT</th>
+						<th>INGREDIENT</th>
+						<th>INGREDIENT</th>
+						<th>INGREDIENT</th>
+						<th>INGREDIENT</th>
+						<th>INGREDIENT</th>
+						<th>INGREDIENT</th>
+						<th>SOURCE</th>
+					</tr>
+					<tbody>
+						{% for post in object_list %}
+						<tr>
+							<td>{{ post.menu_id }}</td>
+							<td>{{ post.menu_name }}</td>
+							<td>{{ post.menu_category1 }}</td>
+							<td>{{ post.menu_category2 }}</td>
+							<td>{{ post.ingredient1 }}</td>
+							<td>{{ post.ingredient2 }}</td>
+							<td>{{ post.ingredient3 }}</td>
+							<td>{{ post.ingredient4 }}</td>
+							<td>{{ post.ingredient5 }}</td>
+							<td>{{ post.ingredient6 }}</td>
+							<td>{{ post.ingredient7 }}</td>
+							<td>{{ post.ingredient8 }}</td>
+							<td>{{ post.ingredient9 }}</td>
+							<td>{{ post.ingredient10 }}</td>
+							<td>{{ post.ingredient11 }}</td>
+							<td>{{ post.ingredient12 }}</td>
+							<td>{{ post.ingredient13 }}</td>
+							<td>{{ post.ingredient14 }}</td>
+							<td>{{ post.ingredient15 }}</td>
+							<td>{{ post.ingredient16 }}</td>
+							<td>{{ post.ingredient17 }}</td>
+							<td>{{ post.ingredient18 }}</td>
+							<td>{{ post.ingredient19 }}</td>
+							<td>{{ post.ingredient20 }}</td>
+							<td>{{ post.source }}</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			{% endif %}
+		</section>
+	</div>
+	
+{% endblock main_content %}
+
+
+

@@ -1,0 +1,20 @@
+
+#form {
+	width: 400px;
+	margin: 30px auto;
+	padding: 20px;
+	border: 1px solid #555;
+	text-align: center;
+}
+.font-title, h2{
+	text-align: center;
+}
+.loginField{
+	width: 50%;
+	border-spacing: 10px 30px;
+	padding-left: 20px;
+}
+
+.submit{
+	text-align: center;
+}
